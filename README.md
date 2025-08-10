@@ -1,2 +1,43 @@
-# Xiaomi-Bootloader-Petition
-Please stop requiring customers to perform China-only tests or submit China-specific "bootloader reports" in order to unlock devices — and accept legitimate international unlock requests without forcing extra, region-locked steps. This change will make unlock flows fairer, safer, and more practical for global users and third-party developers.
+# 📢 Xiaomi Bootloader Unlock Petition
+
+**Live Site:** [https://michaell-android.github.io/Xiaomi-Bootloader-Petition/](https://michaell-android.github.io/Xiaomi-Bootloader-Petition/)
+
+---
+
+## 📝 About
+This is a community-driven petition asking **Xiaomi** to remove unnecessary restrictions, tests, and long waiting times for bootloader unlock requests — especially for **Chinese device variants**.
+
+Our goal is to ensure that **all Xiaomi users**, regardless of region, can unlock their devices freely and fairly.
+
+---
+
+## 🌟 Features
+- 🌏 **Bilingual Interface** – English & Chinese  
+- 📊 **Real-time Signature Count**  
+- 🆓 **No GitHub Account Required** – anyone can sign  
+- 📂 **Signatures stored transparently** in GitHub Issues
+
+---
+
+## 🚀 How to Sign
+1. Visit the petition page:  
+   👉 [https://michaell-android.github.io/Xiaomi-Bootloader-Petition/](https://michaell-android.github.io/Xiaomi-Bootloader-Petition/)
+2. Fill in your **Name**, **Email** (optional), and **Comment**.
+3. Click **Sign Petition**.
+
+Your signature will appear in our public [GitHub Issues](../../issues) list.
+
+---
+
+## 📣 Why This Matters
+Bootloader unlocking is essential for:  
+- 📱 Installing custom ROMs  
+- 🔓 Gaining root access  
+- 🛠 Repairing bricked devices  
+- ♻ Extending device lifespan  
+
+Xiaomi’s restrictive policies make it harder for users to **own and control their devices**. This petition is a call for change.
+
+---
+
+⚡ **Join us and make your voice heard!**
