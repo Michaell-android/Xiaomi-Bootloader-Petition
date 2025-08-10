@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Xiaomi Bootloader Unlock Petition</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: orange;
+    }
+    form {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: 20px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: orange;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: darkorange;
+    }
+    #count {
+      font-weight: bold;
+      color: orange;
+    }
+    .message {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <select id="languageSwitcher">
+    <option value="en">English</option>
+    <option value="zh">中文</option>
+  </select>
+
+  <h1 id="title">Xiaomi Bootloader Unlock Petition</h1>
+  <p id="description">Sign the petition to request Xiaomi to allow easier bootloader unlocking.</p>
+  <p id="countText">Current signatures: <span id="count">Loading...</span></p>
+
+  <form id="petitionForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="comment" placeholder="Comment (optional)"></textarea>
+    <button type="submit" id="signBtn">Sign Petition</button>
+    <div class="message" id="message"></div>
+  </form>
+
+  <script>
+    const workerURL = "https://aged-frost-e378.mluo98888.workers.dev";
+
+    const translations = {
+      en: {
+        title: "Xiaomi Bootloader Unlock Petition",
+        description: "Sign the petition to request Xiaomi to allow easier bootloader unlocking.",
+        countText: "Current signatures:",
+        name: "Your Name",
+        email: "Your Email",
+        comment: "Comment (optional)",
+        signBtn: "Sign Petition",
+        success: "✅ Signature added!",
+        error: "❌ Error submitting signature",
+        network: "❌ Network error"
+      },
+      zh: {
+        title: "小米解锁引导加载程序请愿书",
+        description: "签署请愿书，请求小米允许更容易的引导加载程序解锁。",
+        countText: "当前签名人数：",
+        name: "您的姓名",
+        email: "您的邮箱",
+        comment: "留言（可选）",
+        signBtn: "签署请愿书",
+        success: "✅ 签名成功！",
+        error: "❌ 提交签名时出错",
+        network: "❌ 网络错误"
+      }
+    };
+
+    function updateLanguage(lang) {
+      document.getElementById("title").textContent = translations[lang].title;
+      document.getElementById("description").textContent = translations[lang].description;
+      document.getElementById("countText").firstChild.textContent = translations[lang].countText + " ";
+      document.getElementById("name").placeholder = translations[lang].name;
+      document.getElementById("email").placeholder = translations[lang].email;
+      document.getElementById("comment").placeholder = translations[lang].comment;
+      document.getElementById("signBtn").textContent = translations[lang].signBtn;
+      currentLang = lang;
+    }
+
+    let currentLang = "en";
+
+    document.getElementById("languageSwitcher").addEventListener("change", (e) => {
+      updateLanguage(e.target.value);
+    });
+
+    async function loadCount() {
+      try {
+        const res = await fetch(`${workerURL}?count=true`);
+        const data = await res.json();
+        document.getElementById("count").textContent = data.count;
+      } catch {
+        document.getElementById("count").textContent = "Error";
+      }
+    }
+
+    document.getElementById("petitionForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const comment = document.getElementById("comment").value.trim();
+      const messageEl = document.getElementById("message");
+
+      messageEl.textContent = "Submitting...";
+
+      try {
+        const res = await fetch(workerURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, comment })
+        });
+        const data = await res.json();
+
+        if (res.ok) {
+          messageEl.textContent = translations[currentLang].success;
+          document.getElementById("petitionForm").reset();
+          loadCount();
+        } else {
+          messageEl.textContent = translations[currentLang].error;
+        }
+      } catch {
+        messageEl.textContent = translations[currentLang].network;
+      }
+    });
+
+    // Initial load
+    loadCount();
+    updateLanguage("en");
+  </script>
+</body>
+</html>
