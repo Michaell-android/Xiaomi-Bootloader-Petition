@@ -1,6 +1,6 @@
 # 📢 Xiaomi Bootloader Unlock Petition
 
-**Live Site:** [https://michaell-android.github.io/Xiaomi-Bootloader-Petition/](https://michaell-android.github.io/Xiaomi-Bootloader-Petition/)
+**Live Site:** [[https://michaell-android.github.io/Xiaomi-Bootloader-Petition/](https://aged-frost-e378.mluo98888.workers.dev/)]
 
 ---
 
@@ -21,7 +21,7 @@ Our goal is to ensure that **all Xiaomi users**, regardless of region, can unloc
 
 ## 🚀 How to Sign
 1. Visit the petition page:  
-   👉 [https://michaell-android.github.io/Xiaomi-Bootloader-Petition/](https://michaell-android.github.io/Xiaomi-Bootloader-Petition/)
+   👉 ([https://michaell-android.github.io/Xiaomi-Bootloader-Petition/](https://aged-frost-e378.mluo98888.workers.dev/))
 2. Fill in your **Name**, **Email** (optional), and **Comment**.
 3. Click **Sign Petition**.
 
