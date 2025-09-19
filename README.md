@@ -1,6 +1,6 @@
 # 📢 Xiaomi Bootloader Unlock Petition
 
-**Live Site:** [[https://michaell-android.github.io/Xiaomi-Bootloader-Petition/](https://aged-frost-e378.mluo98888.workers.dev/)]
+**Active Site:** [[https://michaell-android.github.io/Xiaomi-Bootloader-Petition/](https://aged-frost-e378.mluo98888.workers.dev/)]
 
 ---
 
